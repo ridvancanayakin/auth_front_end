@@ -24,9 +24,7 @@ function SignUp() {
           })
           .then(function (response) {
               alert(response.data);
-            //localStorage.setItem("jwt",response.data);
             console.log(response);
-            //setisLogin(true);
           })
           .catch(function (error) {
             alert(error.data);

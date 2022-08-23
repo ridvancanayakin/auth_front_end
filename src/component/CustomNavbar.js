@@ -6,51 +6,47 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function CustomNavbar() {
-  
-
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <Link className="nav-link" to={"/"}>
-                Home <span className="sr-only">(current)</span>
+              <Link className="nav-link px-5 " to={"/"}>
+                Login <span className="sr-only"></span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={"/users"}>
+              <Link className="nav-link px-5" to={"/users"}>
                 Users
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={"/activeUsers"}>
+              <Link className="nav-link px-5" to={"/activeUsers"}>
                 Active Users
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">
-                Disabled
-              </a>
+              <Link className="nav-link px-5" to={"/selectTime"}>
+                Registered Users Within Time Period
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link px-5" to={"/unregisteredUsers"}>
+                Users With Expired Confirmation Tokens
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link px-5" to={"/selectDate"}>
+                Avarage Register Time
+              </Link>
             </li>
           </ul>
         </div>
         <div>
-          <button type="button" className="btn btn-outline-danger">Quit</button>
+          <button type="button" className="btn btn-outline-danger">
+            Quit
+          </button>
         </div>
       </nav>
     </>

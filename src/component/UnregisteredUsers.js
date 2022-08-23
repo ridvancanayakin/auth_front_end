@@ -4,13 +4,11 @@ import { useParams } from "react-router-dom";
 import { Table } from "reactstrap";
 import CustomNavbar from "./CustomNavbar";
 
-function ActiveUsers() {
+function UnRegisteredUsers() {
   const [data, setData] = useState([]);
-
   const getUsers = async () => {
-    console.log(localStorage.getItem("jwt"));
     await axios
-      .get("http://localhost:8080/users/active", {
+      .get("http://localhost:8080/users/unregistered/", {
         headers: { Authorization: localStorage.getItem("jwt") },
       })
       .then(function (response) {
@@ -21,7 +19,6 @@ function ActiveUsers() {
         console.log(error);
       });
   };
-
   useEffect(() => {
     getUsers();
   }, []);
@@ -52,4 +49,4 @@ function ActiveUsers() {
     </div>
   );
 }
-export default ActiveUsers;
+export default UnRegisteredUsers;
