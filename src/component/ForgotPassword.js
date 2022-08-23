@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Col, Row } from "reactstrap";
@@ -8,18 +9,16 @@ function ForgotPassword() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("email:" + email);
-    /*      await axios.post('http://localhost:8080/auth/login', {
-            email:email,
-            password:password
-          })
-          .then(function (response) {
-            localStorage.setItem("jwt",response.data);
-            console.log(response);
-            setisLogin(true);
-          })
-          .catch(function (error) {
-            console.log(error);
-          }); */
+    await axios
+      .get("http://localhost:8080/auth/forgot?email=" + email)
+      .then(function (response) {
+        alert(response.data);
+        console.log(response);
+      })
+      .catch(function (error) {
+        alert(error.data);
+        console.log(error);
+      });
   };
 
   const loginPage = (event) => {
@@ -46,7 +45,7 @@ function ForgotPassword() {
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
               />
-              <button type="submit"  className="btn btn-primary">
+              <button type="submit" className="btn btn-primary">
                 Submit
               </button>
             </div>

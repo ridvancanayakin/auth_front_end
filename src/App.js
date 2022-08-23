@@ -6,6 +6,7 @@ import'../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Login from './component/Login';
 import ActiveUsers from './component/ActiveUsers';
 import ForgotPassword from './component/ForgotPassword';
+import ResetPassword from './component/ResetPassword';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/users" element={ <User/> }></Route>
           <Route path="/activeUsers" element={ <ActiveUsers/>}></Route>
           <Route path="/forgotPassword" element={ <ForgotPassword/>}></Route>
+          <Route exact path="/resetPassword/:token" element={ <ResetPassword/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
