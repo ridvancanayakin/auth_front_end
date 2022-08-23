@@ -50,20 +50,10 @@ function Login() {
               <label for="exampleInputPassword1">Password</label>
               <input onChange={event => setpassword(event.target.value)}
                 type="password"
-                className="form-control"
+                className="form-control mb-3"
                 id="exampleInputPassword1"
                 placeholder="Password"
               />
-            </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" for="exampleCheck1">
-                Check me out
-              </label>
             </div>
             <div>
             <button type="submit" className="btn btn-primary">
@@ -71,7 +61,8 @@ function Login() {
             </button>
             </div>
           </form>
-          <Link to={"/forgotPassword"}>Forgot Password?</Link>
+          <div className="my-3"><Link to={"/signUp"}>Sign Up!</Link></div>
+          <div><Link to={"/forgotPassword"}>Forgot Password?</Link></div>
         </Col>
         <Col md="4"></Col>
       </Row>

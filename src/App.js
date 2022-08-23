@@ -7,6 +7,7 @@ import Login from './component/Login';
 import ActiveUsers from './component/ActiveUsers';
 import ForgotPassword from './component/ForgotPassword';
 import ResetPassword from './component/ResetPassword';
+import SignUp from './component/SignUp';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/activeUsers" element={ <ActiveUsers/>}></Route>
           <Route path="/forgotPassword" element={ <ForgotPassword/>}></Route>
           <Route exact path="/resetPassword/:token" element={ <ResetPassword/>}></Route>
+          <Route path = "/signUp" element={<SignUp/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
